@@ -1,53 +1,49 @@
-def entrada():
-	print ("\nEscolha a operação: ")
-	return int(input ("\n1 - Soma \n2 - Subtração \n3 - Divisão \n4 - Multiplicação \n0 - Sair \n\nDigite aqui o número da operação: "))
+# Calculadora em Python
 
-def saida():
-    print ("\nEscolha a opção: ")
-    return int(input ("\n0 - Sair \n5 - Novo Calculo \n\nDigite aqui o número da opção: "))
+print("\n******************* Python Calculator *******************")
 
-def soma(x, y):
-    return x + y
+def add(x, y):
+	return x + y
 
-def subtracao(x, y):
-    return x - y
+def subtract(x, y):
+	return x - y
 
-def multiplicacao(x, y):
-    return x * y
+def multiply(x, y):
+	return x * y
 
-def divisao(x, y):
-    return x / y
+def divide(x, y):
+	return x / y
 
-operacao = ["Sair", "Soma", "Subtração", "Divisão", "Multiplicação"]
+print("\nSelecione o número da operação desejada: \n")
+print("1 - Soma")
+print("2 - Subtração")
+print("3 - Multiplicação")
+print("4 - Divisão")
 
-print ("::: Calculadora MJ:::")
-op = entrada()
+escolha = input("\nDigite sua opção (1/2/3/4): ")
 
-while (op >= 1 and op <=4):
+num1 = int(input("\nDigite o primeiro número: "))
+num2 = int(input("\nDigite o segundo número: "))
 
-	print ("Opção escolhida: ", operacao[op],"\n")
+if escolha == '1':
+	print("\n")
+	print(num1, "+", num2, "=", add(num1, num2))
+	print("\n")
 
-	num1 = int(input("Insira o primeiro valor: "))
-	print()
-	num2 = int(input("Insira o segundo valor: "))
-	print()
+elif escolha == '2':
+	print("\n")
+	print(num1, "-", num2, "=", subtract(num1, num2))
+	print("\n")
 
-	if op == 1:	
-		print("Resultado: ", soma(num1, num2), "\n\n")
+elif escolha == '3':
+	print("\n")
+	print(num1, "*", num2, "=", multiply(num1, num2))
+	print("\n")
 
-	elif op == 2:
-		print("Resultado: ", subtracao(num1, num2), "\n\n")
-
-	elif op == 3:
-		print("Resultado: ", divisao(num1, num2), "\n\n")
-
-	elif op == 4:
-		print("Resultado: ", multiplicacao(num1, num2), "\n\n")
-
-	op = saida()
-
-	while op == 5:
-		op = entrada()
+elif escolha == '4':
+	print("\n")
+	print(num1, "/", num2, "=", divide(num1, num2))
+	print("\n")
 
 else:
-	print("Obrigado por usar a calculadora")
+	print("\nOpção Inválida!")
